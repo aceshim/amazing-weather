@@ -1,13 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import Weather from "./Weather";
+
 
 export default class App extends React.Component {
   state = {
-    isLoaded: false,
-  }
+    isLoaded: true,
+  };
+
   render() {
+    const { isLoaded } = this.state;
+
     return (
       <View style={styles.container}>
+        {isLoaded? <Weather/> : (
+          <View style={styles.loading}>
+            <Text style={styles.loadingText}>Getting the Amazing Weather</Text>
+          </View>
+        )}
       </View>
     );
   }
@@ -17,7 +27,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  loading: {
+    flex: 1,
+    backgroundColor: '#FDF6AA',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 25,
+  },
+  loadingText: {
+    fontSize: 38,
+    marginBottom: 100,
+  }
 });
