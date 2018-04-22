@@ -37,7 +37,7 @@ const weatherCases = {
   },
   Snow: {
     colors: ["#7DE2FC", "#B9B6E5"],
-    title: "Cold as balls",
+    title: "Snowy",
     subtitle: "Do you want to build a snowman?",
     icon: "weather-snowy",
   },
